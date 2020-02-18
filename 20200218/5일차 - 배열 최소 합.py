@@ -10,7 +10,7 @@ def hap(y):
     if y == N:
         if result <= min_res:
             min_res = result
-            stack.append(result)
+            # stack.append(result)
 
     for x in range(N):
         if not visited[x]:
@@ -33,5 +33,6 @@ for tc in range(T):
     visited = [0]*N
     hap(0)
     # print(stack)
-    print('#{} {}'.format(tc+1, min(stack)))
+    # print('#{} {}'.format(tc+1, min(stack)))
+    print('#{} {}'.format(tc+1, min_res))
 

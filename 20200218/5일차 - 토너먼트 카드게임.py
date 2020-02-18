@@ -35,11 +35,9 @@ def match(i, j):
 
     l = match(i, (i + j) // 2)
     r = match((i + j) // 2 + 1, j)
-    if l == None:
-        if r:
-            return stack.append([r, r])
-    else:
-        return stack.append([l, r])
+    a = winner(l,r)
+    return a
+    # return stack.append([l,r])
 
 for tc in range(T):
     N = int(input())
@@ -47,39 +45,13 @@ for tc in range(T):
     stack = []
     i = 0
     j = N - 1
-    match(i,j)
-    print(stack)
-    # print(match(i,j))
+    # match(i,j)
+    # # print(card)
+    # # print(stack[:-1])
+    print(match(i,j)+1)
+    # print(winner(None,None))
 
 
-
-
-
-# def match(i, j):
-#     if i == j:
-#         return i
-
-#     l = match(i, (i + j) // 2)
-#     r = match((i + j) // 2 + 1, j)
-#     if l == None:
-#         if r:
-#             return stack.append([r, r])
-#     else:
-#         return stack.append([l, r])
-    # while t:
-    #     match(i, j)
-    #     # print(stack)
-    #     for idx, val in enumerate(stack):
-    #         stack[idx] = winner(card[val[0]],card[val[1]])
-    #     # print(stack)
-    #     if len(stack) == 1:
-    #         t = False
-    #         break
-    #     card = stack
-    #     stack = []
-    #     i = 0
-    #     j = len(card)-1
-    # print(stack)
 
 
 
