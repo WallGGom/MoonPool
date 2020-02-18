@@ -33,10 +33,10 @@ def match(i, j):
     if i == j:
         return i
 
-    first = match(i, (i + j) // 2)
-    second = match((i + j) // 2 + 1, j)
+    l = match(i, (i + j) // 2)
+    r = match((i + j) // 2 + 1, j)
     # return winner(first, second)
-    return stack.append([first, second])
+    return stack.append([l, r])
 
 for tc in range(T):
     N = int(input())

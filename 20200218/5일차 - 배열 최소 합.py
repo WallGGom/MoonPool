@@ -2,9 +2,15 @@ import sys
 sys.stdin = open('5일차 - 배열 최소 합.txt', 'r')
 
 def hap(y):
-    global result
+    global result, min_res
+
+    if result >= min_res:
+        return
+
     if y == N:
-        stack.append(result)
+        if result <= min_res:
+            min_res = result
+            stack.append(result)
 
     for x in range(N):
         if not visited[x]:
@@ -23,8 +29,9 @@ for tc in range(T):
 
     stack = []
     result = 0
+    min_res = 10*N
     visited = [0]*N
     hap(0)
-    print(stack)
-    # print('#{} {}'.format(tc+1, min(stack)))
+    # print(stack)
+    print('#{} {}'.format(tc+1, min(stack)))
 
