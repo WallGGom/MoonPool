@@ -35,8 +35,11 @@ def match(i, j):
 
     l = match(i, (i + j) // 2)
     r = match((i + j) // 2 + 1, j)
-    # return winner(first, second)
-    return stack.append([l, r])
+    if l == None:
+        if r:
+            return stack.append([r, r])
+    else:
+        return stack.append([l, r])
 
 for tc in range(T):
     N = int(input())
@@ -48,6 +51,21 @@ for tc in range(T):
     print(stack)
     # print(match(i,j))
 
+
+
+
+
+# def match(i, j):
+#     if i == j:
+#         return i
+
+#     l = match(i, (i + j) // 2)
+#     r = match((i + j) // 2 + 1, j)
+#     if l == None:
+#         if r:
+#             return stack.append([r, r])
+#     else:
+#         return stack.append([l, r])
     # while t:
     #     match(i, j)
     #     # print(stack)
